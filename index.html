@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101426">
+<meta name="description" content="عبد الفتاح، بوابتك الإسلامية للقرآن الكريم وأوقات الصلاة والأذكار والقبلة.">
+<title>عبد الفتاح | Islamic Portal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{--bg:#101426;--panel:rgba(26,33,59,.82);--text:#edf0ff;--muted:#a5acc7;--blue:#76c9ff;--purple:#a78bfa;--cyan:#65e3e8;--line:rgba(153,173,255,.2);--shadow:0 16px 45px rgba(0,0,0,.22)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:95px}
+body{margin:0;font-family:'Cairo',sans-serif;color:var(--text);background:radial-gradient(ellipse at 12% 3%,#273a71 0,transparent 38%),radial-gradient(ellipse at 88% 24%,#492c75 0,transparent 35%),var(--bg);min-height:100vh}
+body,button,input,select{font-family:'Cairo',sans-serif}button,select{cursor:pointer}
+.arabic{font-family:'Amiri',serif}.muted{color:var(--muted)}.gradient-text{background:linear-gradient(100deg,#76c9ff,#b49aff,#6de6e1);-webkit-background-clip:text;background-clip:text;color:transparent}
+.glass{background:var(--panel);border:1px solid var(--line);backdrop-filter:blur(18px);border-radius:22px;box-shadow:var(--shadow)}
+.gradient-button{background:linear-gradient(110deg,#5e9cff,#9475f5,#56d5df);color:#101426;font-weight:800;border:0;transition:.2s}
+.gradient-button:hover{filter:brightness(1.12);transform:translateY(-2px)}button:disabled{opacity:.45;cursor:not-allowed;transform:none!important}
+select,.control{background:#202946;color:white;border:1px solid #667bb4;border-radius:12px;padding:10px 12px;max-width:100%}
+a{color:inherit;text-decoration:none}.nav-link{color:#c4cce6;transition:.2s}.nav-link:hover{color:#82c9ff}
+.wrap{width:min(1160px,calc(100% - 32px));margin:auto}.section{margin-top:42px}.section-title{font-size:clamp(1.5rem,3vw,2rem);font-weight:800;margin:0 0 8px}
+header{position:sticky;top:0;z-index:20;background:rgba(16,20,38,.9);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:13px 0}
+.brand{display:flex;align-items:center;gap:12px}.brand-icon{width:46px;height:46px;border-radius:15px;display:grid;place-items:center}
+nav{display:flex;gap:18px;flex-wrap:wrap;font-size:.9rem}
+main{padding:32px 0 55px}.hero{padding:clamp(24px,5vw,52px);overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}
+.hero h2{font-size:clamp(2rem,5vw,3.6rem);line-height:1.35;margin:14px 0}
+.hero p{line-height:2;color:#cbd3e9}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:11px 18px;border-radius:13px;border:1px solid var(--line)}
+.hero-verse{text-align:center;padding:28px}.hero-verse .arabic{font-size:clamp(1.7rem,3vw,2.2rem);line-height:2}
+.row{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.grid{display:grid;gap:16px}.prayer-grid{grid-template-columns:repeat(6,1fr)}
+.prayer-card{text-align:center;padding:18px 10px}.prayer-card.active{border-color:#82b9ff;background:linear-gradient(140deg,#263d70,#30234f)}
+.prayer-card .time{font-size:1.15rem;font-weight:800;margin:8px 0 0}.prayer-card .icon{font-size:1.4rem;color:#8bd9ff}
+.status{font-size:.83rem;color:var(--muted);min-height:1.4em;margin:9px 0 0}
+.two-col{grid-template-columns:1fr 1fr}.panel{padding:24px}.quran-toolbar{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.quran-box{margin-top:18px;background:#111a31;border-radius:18px;padding:22px;text-align:center;min-height:130px}
+.ayah-text{font-size:1.75rem;line-height:2.35;white-space:normal}.audio-controls{display:grid;gap:13px;margin-top:18px}
+.audio-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.audio-row select{flex:1;min-width:190px}
+.progress{width:100%;accent-color:#8b9cff}.small{font-size:.82rem}.counter-box{background:#111a31;border-radius:18px;padding:22px}
+.count-number{font-size:4rem;font-weight:800;line-height:1.2}.count-btn{width:118px;height:118px;border-radius:50%;font-size:1.1rem}
+.adhkar-item{background:#111a31;border-radius:16px;padding:17px}.adhkar-item p{font-size:1.25rem;line-height:2;margin:0}
+.copy-btn{border:0;background:transparent;color:#8bd9ff;margin-top:9px;padding:5px}
+.compass{width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,#26365b,#11182d);border:3px solid #819ce8;position:relative;margin:12px auto;display:grid;place-items:center}
+.compass .direction{position:absolute;font-weight:800;font-size:.8rem}.north{top:7px}.south{bottom:7px}.east{right:9px}.west{left:9px}
+#needle{position:absolute;width:4px;height:82px;left:calc(50% - 2px);top:50%;transform-origin:50% 0;transition:transform .5s ease}
+#needle:before{content:"";position:absolute;top:0;left:-7px;border-left:9px solid transparent;border-right:9px solid transparent;border-bottom:42px solid #75dce9}
+#needle:after{content:"";position:absolute;top:42px;left:-7px;border-left:9px solid transparent;border-right:9px solid transparent;border-top:40px solid #a78bfa}
+#qiblaCenter{position:absolute;width:13px;height:13px;border-radius:50%;background:white;z-index:2}
+footer{border-top:1px solid var(--line);padding:28px 16px;text-align:center;color:var(--muted)}
+.toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,20px);background:#26365b;border:1px solid #819ce8;padding:11px 17px;border-radius:12px;opacity:0;pointer-events:none;transition:.25s;z-index:50;max-width:90%;text-align:center}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:850px){.hero-grid,.two-col{grid-template-columns:1fr}.prayer-grid{grid-template-columns:repeat(3,1fr)}nav{display:none}}
+@media(max-width:480px){.wrap{width:min(100% - 22px,1160px)}.prayer-grid{grid-template-columns:repeat(2,1fr)}.panel{padding:18px}.compass{width:195px;height:195px}.header-inner{padding:10px 0}}
+</style>
+</head>
+<body>
+<header>
+ <div class="wrap header-inner">
+  <a class="brand" href="#home"><span class="brand-icon gradient-button"><i class="fa-solid fa-mosque"></i></span><span><strong class="gradient-text">عبد الفتاح</strong><small class="muted" style="display:block" data-i18n="subtitle">البوابة الإسلامية الشاملة</small></span></a>
+  <nav><a class="nav-link" href="#home" data-i18n="home">الرئيسية</a><a class="nav-link" href="#prayers" data-i18n="prayers">الصلاة</a><a class="nav-link" href="#quran" data-i18n="quran">القرآن</a><a class="nav-link" href="#adhkar" data-i18n="adhkar">الأذكار</a><a class="nav-link" href="#tools" data-i18n="tools">الأدوات</a></nav>
+  <select id="language" aria-label="Language"><option value="ar">العربية</option><option value="en">English</option><option value="fr">Français</option><option value="sw">Kiswahili</option></select>
+ </div>
+</header>
+
+<main class="wrap">
+ <section id="home" class="glass hero">
+  <div class="hero-grid">
+   <div><span class="gradient-text" data-i18n="bismillah">بسم الله الرحمن الرحيم</span><h2 data-i18n="heroTitle">نور يومك بذكر الله ✨</h2><p data-i18n="heroDesc">اقرأ القرآن، تابع أوقات الصلاة، واستمتع بالأذكار اليومية في مكان واحد.</p><div class="actions"><a class="btn gradient-button" href="#quran" data-i18n="readQuran">اقرأ القرآن</a><a class="btn glass" href="#adhkar" data-i18n="startDhikr">ابدأ الذكر</a></div></div>
+   <div class="glass hero-verse"><i class="fa-solid fa-star-and-crescent gradient-text" style="font-size:2.8rem"></i><p class="arabic">﴿ أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ ﴾</p><small class="muted" data-i18n="verseRef">سورة الرعد، الآية 28</small></div>
+  </div>
+ </section>
+
+ <section id="prayers" class="section">
+  <div class="row"><div><h2 class="section-title gradient-text" data-i18n="prayerTitle">أوقات الصلاة</h2><p class="muted small" data-i18n="prayerDesc">مواقيت الصلاة حسب موقعك</p></div><div style="text-align:end"><div id="clock" class="gradient-text" style="font-size:1.5rem;font-weight:800">--:--:--</div><div id="today" class="muted small"></div></div></div>
+  <div class="glass panel" style="margin-top:16px"><div class="row"><span id="locationText" class="small muted" data-i18n="locationPrompt">حدد موقعك لجلب المواقيت</span><button id="getPrayers" class="btn gradient-button"><i class="fa-solid fa-location-crosshairs"></i><span data-i18n="getLocation">استخدم موقعي</span></button></div><p id="prayerStatus" class="status" aria-live="polite"></p><div id="nextPrayer" class="gradient-text" style="font-weight:800;margin-top:7px"></div></div>
+  <div id="prayerGrid" class="grid prayer-grid" style="margin-top:16px">
+   <div class="glass prayer-card" data-prayer="Fajr"><i class="fa-solid fa-sun icon"></i><h3 data-i18n="fajr">الفجر</h3><p class="time">--:--</p></div>
+   <div class="glass prayer-card" data-prayer="Sunrise"><i class="fa-solid fa-sun icon"></i><h3 data-i18n="sunrise">الشروق</h3><p class="time">--:--</p></div>
+   <div class="glass prayer-card" data-prayer="Dhuhr"><i class="fa-solid fa-sun icon"></i><h3 data-i18n="dhuhr">الظهر</h3><p class="time">--:--</p></div>
+   <div class="glass prayer-card" data-prayer="Asr"><i class="fa-solid fa-cloud-sun icon"></i><h3 data-i18n="asr">العصر</h3><p class="time">--:--</p></div>
+   <div class="glass prayer-card" data-prayer="Maghrib"><i class="fa-solid fa-cloud-moon icon"></i><h3 data-i18n="maghrib">المغرب</h3><p class="time">--:--</p></div>
+   <div class="glass prayer-card" data-prayer="Isha"><i class="fa-solid fa-moon icon"></i><h3 data-i18n="isha">العشاء</h3><p class="time">--:--</p></div>
+  </div>
+ </section>
+
+ <section id="quran" class="section">
+  <h2 class="section-title gradient-text" data-i18n="quranTitle">القرآن الكريم</h2>
+  <div class="glass panel">
+   <div class="quran-toolbar"><div><strong data-i18n="selectSurah">اختر سورة</strong><p id="surahName" class="muted small" style="margin:4px 0 0">سورة الفاتحة</p></div><select id="surahSelect" aria-label="Select surah"><option value="1">1 - الفاتحة</option></select></div>
+   <div class="quran-box"><p id="surahMessage" class="muted small" aria-live="polite" data-i18n="quranHint">اختر سورة لعرض نصها.</p><div id="surahText" class="arabic ayah-text"></div></div>
+   <div class="audio-controls">
+    <div class="row"><strong class="gradient-text" data-i18n="audioRecitation">استمع إلى التلاوة</strong><span id="ayahPosition" class="muted small">0 / 0</span></div>
+    <div class="audio-row"><select id="reciterSelect" aria-label="Reciter"><option value="ar.alafasy">مشاري العفاسي</option><option value="ar.abdulbasit">عبد الباسط عبد الصمد</option><option value="ar.husary">محمود خليل الحصري</option><option value="ar.minshawi">محمد صديق المنشاوي</option></select><button id="playBtn" class="btn gradient-button"><i class="fa-solid fa-play"></i><span data-i18n="play">تشغيل</span></button><button id="prevBtn" class="btn glass" aria-label="Previous ayah"><i class="fa-solid fa-backward-step"></i></button><button id="nextBtn" class="btn glass" aria-label="Next ayah"><i class="fa-solid fa-forward-step"></i></button><select id="speedSelect" aria-label="Playback speed"><option value="1">1×</option><option value="0.75">0.75×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option></select></div>
+    <input id="audioProgress" class="progress" type="range" min="0" max="100" value="0" aria-label="Audio progress">
+    <div class="row muted small"><span id="currentTime">0:00</span><span id="duration">0:00</span></div>
+    <p id="audioStatus" class="status" aria-live="polite"></p><audio id="quranAudio" preload="metadata"></audio>
+   </div>
+  </div>
+ </section>
+
+ <section id="adhkar" class="section grid two-col">
+  <div class="glass panel" style="text-align:center">
+   <h2 class="section-title gradient-text" data-i18n="tasbeehTitle">السبحة الإلكترونية</h2>
+   <select id="dhikrSelect" style="width:100%;margin:12px 0"><option>سبحان الله</option><option>الحمد لله</option><option>الله أكبر</option><option>لا إله إلا الله</option><option>أستغفر الله</option><option>اللهم صل وسلم على نبينا محمد</option></select>
+   <div class="counter-box"><p id="dhikrDisplay" class="arabic" style="font-size:1.5rem">سبحان الله</p><p id="count" class="count-number gradient-text">0</p><small class="muted" data-i18n="savedOnDevice">يُحفظ العدد على هذا الجهاز</small></div>
+   <div class="actions" style="justify-content:center"><button id="countBtn" class="btn gradient-button count-btn" data-i18n="countButton">تسبيح</button><button id="resetBtn" class="btn glass" data-i18n="reset">تصفير</button></div>
+  </div>
+  <div class="glass panel"><h2 class="section-title gradient-text" data-i18n="dailyDhikr">أذكار يومية</h2><div class="actions" style="margin:12px 0"><button id="morningBtn" class="btn gradient-button" data-i18n="morning">الصباح</button><button id="eveningBtn" class="btn glass" data-i18n="evening">المساء</button></div><div id="adhkarList" class="grid"></div></div>
+ </section>
+
+ <section id="tools" class="section grid two-col">
+  <div class="glass panel" style="text-align:center"><h2 class="section-title gradient-text" data-i18n="qiblaTitle">اتجاه القبلة</h2><div class="compass"><span class="direction north">N</span><span class="direction south">S</span><span class="direction east">E</span><span class="direction west">W</span><div id="needle"></div><div id="qiblaCenter"></div><i class="fa-solid fa-kaaba" style="position:absolute;color:white"></i></div><p id="qiblaResult" class="muted small" data-i18n="qiblaHint">احسب اتجاه القبلة من موقعك.</p><button id="qiblaBtn" class="btn gradient-button" data-i18n="calculateQibla">احسب اتجاه القبلة</button><p class="muted small" data-i18n="compassNote">البوصلة ثابتة نحو الشمال الحقيقي، وليست مستشعر اتجاه الهاتف.</p></div>
+  <div class="glass panel" style="text-align:center"><h2 class="section-title gradient-text" data-i18n="calendarTitle">التقويم الهجري</h2><i class="fa-solid fa-calendar-days" style="font-size:3rem;color:#8bd9ff;margin:15px"></i><p id="hijriDate" style="font-size:1.4rem;font-weight:800"></p><p id="gregorianDate" class="muted"></p><p class="muted small" data-i18n="calendarNote">قد يختلف التاريخ حسب رؤية الهلال والبلد.</p></div>
+ </section>
+</main>
+<footer><strong class="gradient-text" style="font-size:1.3rem">عبد الفتاح</strong><p data-i18n="footer">موقعك الإسلامي الشامل</p><small>© <span id="year"></span></small></footer>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<script>
+"use strict";
+const translations={
+ar:{subtitle:"البوابة الإسلامية الشاملة",home:"الرئيسية",prayers:"الصلاة",quran:"القرآن",adhkar:"الأذكار",tools:"الأدوات",bismillah:"بسم الله الرحمن الرحيم",heroTitle:"نور يومك بذكر الله ✨",heroDesc:"اقرأ القرآن، تابع أوقات الصلاة، واستمتع بالأذكار اليومية في مكان واحد.",readQuran:"اقرأ القرآن",startDhikr:"ابدأ الذكر",verseRef:"سورة الرعد، الآية 28",prayerTitle:"أوقات الصلاة",prayerDesc:"مواقيت الصلاة حسب موقعك",locationPrompt:"حدد موقعك لجلب المواقيت",getLocation:"استخدم موقعي",fajr:"الفجر",sunrise:"الشروق",dhuhr:"الظهر",asr:"العصر",maghrib:"المغرب",isha:"العشاء",quranTitle:"القرآن الكريم",selectSurah:"اختر سورة",quranHint:"اختر سورة لعرض نصها.",audioRecitation:"استمع إلى التلاوة",play:"تشغيل",pause:"إيقاف مؤقت",tasbeehTitle:"السبحة الإلكترونية",countButton:"تسبيح",reset:"تصفير",savedOnDevice:"يُحفظ العدد على هذا الجهاز",dailyDhikr:"أذكار يومية",morning:"الصباح",evening:"المساء",qiblaTitle:"اتجاه القبلة",qiblaHint:"احسب اتجاه القبلة من موقعك.",calculateQibla:"احسب اتجاه القبلة",compassNote:"البوصلة ثابتة نحو الشمال الحقيقي، وليست مستشعر اتجاه الهاتف.",calendarTitle:"التقويم الهجري",calendarNote:"قد يختلف التاريخ حسب رؤية الهلال والبلد.",footer:"موقعك الإسلامي الشامل",loading:"جارٍ التحميل...",locationError:"تعذر تحديد موقعك. تحقق من إذن الموقع.",prayerError:"تعذر تحميل مواقيت الصلاة.",apiError:"تعذر تحميل السورة. حاول مرة أخرى.",audioError:"تعذر تشغيل التلاوة. جرّب قارئاً آخر أو تحقق من الاتصال.",qiblaDirection:"اتجاه القبلة من الشمال: ",degrees:"درجة",nextPrayer:"الصلاة القادمة",in:"بعد",noPrayer:"اكتملت صلوات اليوم",copy:"نسخ الذكر",copied:"تم النسخ",copyFail:"تعذر النسخ",ayah:"الآية",reciter:"القارئ"},
+en:{subtitle:"The Complete Islamic Portal",home:"Home",prayers:"Prayer times",quran:"Quran",adhkar:"Dhikr",tools:"Tools",bismillah:"In the name of Allah, the Most Merciful",heroTitle:"Brighten your day with the remembrance of Allah ✨",heroDesc:"Read the Quran, check prayer times and enjoy daily adhkar in one place.",readQuran:"Read Quran",startDhikr:"Start dhikr",verseRef:"Surah Ar-Ra'd, verse 28",prayerTitle:"Prayer times",prayerDesc:"Prayer times based on your location",locationPrompt:"Set your location to get prayer times",getLocation:"Use my location",fajr:"Fajr",sunrise:"Sunrise",dhuhr:"Dhuhr",asr:"Asr",maghrib:"Maghrib",isha:"Isha",quranTitle:"The Holy Quran",selectSurah:"Choose a surah",quranHint:"Choose a surah to display its text.",audioRecitation:"Listen to recitation",play:"Play",pause:"Pause",tasbeehTitle:"Digital tasbeeh",countButton:"Count",reset:"Reset",savedOnDevice:"Count is saved on this device",dailyDhikr:"Daily adhkar",morning:"Morning",evening:"Evening",qiblaTitle:"Qibla direction",qiblaHint:"Calculate Qibla direction from your location.",calculateQibla:"Find Qibla",compassNote:"Compass is aligned to true north; it is not your phone's heading sensor.",calendarTitle:"Hijri calendar",calendarNote:"The date may vary by moon sighting and country.",footer:"Your complete Islamic portal",loading:"Loading...",locationError:"Could not get your location. Check location permission.",prayerError:"Could not load prayer times.",apiError:"Could not load the surah. Try again.",audioError:"Could not play recitation. Try another reciter or check your connection.",qiblaDirection:"Qibla bearing from north: ",degrees:"degrees",nextPrayer:"Next prayer",in:"in",noPrayer:"Today's prayers are complete",copy:"Copy dhikr",copied:"Copied",copyFail:"Could not copy",ayah:"Ayah",reciter:"Reciter"},
+fr:{subtitle:"Portail islamique complet",home:"Accueil",prayers:"Prières",quran:"Coran",adhkar:"Invocations",tools:"Outils",bismillah:"Au nom d'Allah, le Tout Miséricordieux",heroTitle:"Illuminez votre journée par le rappel d'Allah ✨",heroDesc:"Lisez le Coran, consultez les heures de prière et découvrez les invocations quotidiennes.",readQuran:"Lire le Coran",startDhikr:"Commencer",verseRef:"Sourate Ar-Ra'd, verset 28",prayerTitle:"Heures de prière",prayerDesc:"Horaires selon votre position",locationPrompt:"Définissez votre position",getLocation:"Utiliser ma position",fajr:"Fajr",sunrise:"Lever du soleil",dhuhr:"Dhuhr",asr:"Asr",maghrib:"Maghrib",isha:"Isha",quranTitle:"Le Saint Coran",selectSurah:"Choisir une sourate",quranHint:"Choisissez une sourate pour afficher son texte.",audioRecitation:"Écouter la récitation",play:"Lire",pause:"Pause",tasbeehTitle:"Chapelet numérique",countButton:"Compter",reset:"Réinitialiser",savedOnDevice:"Compteur enregistré sur cet appareil",dailyDhikr:"Invocations quotidiennes",morning:"Matin",evening:"Soir",qiblaTitle:"Direction de la Qibla",qiblaHint:"Calculez la direction depuis votre position.",calculateQibla:"Trouver la Qibla",compassNote:"La boussole indique le nord vrai, pas l'orientation du téléphone.",calendarTitle:"Calendrier hégirien",calendarNote:"La date peut varier selon l'observation lunaire.",footer:"Votre portail islamique",loading:"Chargement...",locationError:"Position introuvable. Vérifiez l'autorisation.",prayerError:"Impossible de charger les horaires.",apiError:"Impossible de charger la sourate.",audioError:"Lecture impossible. Essayez un autre récitateur.",qiblaDirection:"Direction depuis le nord : ",degrees:"degrés",nextPrayer:"Prochaine prière",in:"dans",noPrayer:"Prières du jour terminées",copy:"Copier",copied:"Copié",copyFail:"Copie impossible",ayah:"Verset",reciter:"Récitateur"},
+sw:{subtitle:"Tovuti Kamili ya Kiislamu",home:"Nyumbani",prayers:"Nyakati za swala",quran:"Qurani",adhkar:"Dhikri",tools:"Zana",bismillah:"Kwa jina la Mwenyezi Mungu, Mwingi wa rehema",heroTitle:"Angaza siku yako kwa kumkumbuka Allah ✨",heroDesc:"Soma Qurani, angalia nyakati za swala na adhkari za kila siku.",readQuran:"Soma Qurani",startDhikr:"Anza dhikri",verseRef:"Surat Ar-Ra'd, aya ya 28",prayerTitle:"Nyakati za swala",prayerDesc:"Nyakati kulingana na eneo lako",locationPrompt:"Weka eneo lako kupata nyakati",getLocation:"Tumia eneo langu",fajr:"Alfajiri",sunrise:"Jua kuchomoza",dhuhr:"Adhuhuri",asr:"Alasiri",maghrib:"Magharibi",isha:"Isha",quranTitle:"Qurani Tukufu",selectSurah:"Chagua sura",quranHint:"Chagua sura kuonyesha maandishi yake.",audioRecitation:"Sikiliza kisomo",play:"Cheza",pause:"Sitisha",tasbeehTitle:"Tasbihi ya kidijitali",countButton:"Hesabu",reset:"Anza upya",savedOnDevice:"Hesabu imehifadhiwa kwenye kifaa hiki",dailyDhikr:"Dhikri za kila siku",morning:"Asubuhi",evening:"Jioni",qiblaTitle:"Mwelekeo wa Qibla",qiblaHint:"Pata mwelekeo wa Qibla kutoka eneo lako.",calculateQibla:"Tafuta Qibla",compassNote:"Dira inaelekezwa kaskazini halisi; si kipimo cha mwelekeo wa simu.",calendarTitle:"Kalenda ya Hijria",calendarNote:"Tarehe inaweza kutofautiana kulingana na mwandamo.",footer:"Tovuti yako kamili ya Kiislamu",loading:"Inapakia...",locationError:"Imeshindikana kupata eneo. Angalia ruhusa.",prayerError:"Imeshindikana kupakia nyakati.",apiError:"Imeshindikana kupakia sura.",audioError:"Kisomo hakijacheza. Jaribu msomaji mwingine.",qiblaDirection:"Mwelekeo kutoka kaskazini: ",degrees:"digrii",nextPrayer:"Swala inayofuata",in:"baada ya",noPrayer:"Swala za leo zimekamilika",copy:"Nakili",copied:"Imenakiliwa",copyFail:"Imeshindikana kunakili",ayah:"Aya",reciter:"Msomaji"}
+};
+const $=id=>document.getElementById(id);
+let language="ar",surahAyahs=[],currentAyah=0,prayerTimes=null,prayerTimer=null,toastTimer=null;
+const audio=$("quranAudio");
+const morningAdhkar=["أصبحنا وأصبح الملك لله، والحمد لله، لا إله إلا الله وحده لا شريك له.","رضيت بالله رباً، وبالإسلام ديناً، وبمحمد صلى الله عليه وسلم نبياً.","اللهم بك أصبحنا، وبك أمسينا، وبك نحيا، وبك نموت وإليك النشور."];
+const eveningAdhkar=["أمسينا وأمسى الملك لله، والحمد لله، لا إله إلا الله وحده لا شريك له.","اللهم بك أمسينا وبك أصبحنا وبك نحيا وبك نموت وإليك المصير.","أعوذ بكلمات الله التامات من شر ما خلق."];
+function t(k){return translations[language]?.[k]||translations.en[k]||k}
+function toast(message){$("toast").textContent=message;$("toast").classList.add("show");clearTimeout(toastTimer);toastTimer=setTimeout(()=>$("toast").classList.remove("show"),2400)}
+function setLanguage(lang){language=lang;document.documentElement.lang=lang;document.documentElement.dir=lang==="ar"?"rtl":"ltr";document.querySelectorAll("[data-i18n]").forEach(el=>{const key=el.dataset.i18n;if(translations[lang][key])el.textContent=translations[lang][key]});updateClock();updateCalendar();renderAdhkar();updatePlayLabel()}
+$("language").addEventListener("change",e=>setLanguage(e.target.value));
+function updateClock(){const now=new Date();$("clock").textContent=now.toLocaleTimeString(language,{hour:"2-digit",minute:"2-digit",second:"2-digit"});$("today").textContent=now.toLocaleDateString(language,{weekday:"long",year:"numeric",month:"long",day:"numeric"})}
+setInterval(updateClock,1000);updateClock();$("year").textContent=new Date().getFullYear();
+function updateCalendar(){const now=new Date();try{$("hijriDate").textContent=new Intl.DateTimeFormat(language+"-u-ca-islamic-umalqura",{day:"numeric",month:"long",year:"numeric"}).format(now)}catch{$("hijriDate").textContent=new Intl.DateTimeFormat(language+"-u-ca-islamic",{day:"numeric",month:"long",year:"numeric"}).format(now)}$("gregorianDate").textContent=now.toLocaleDateString(language,{weekday:"long",year:"numeric",month:"long",day:"numeric"})}
+function getLocation(){return new Promise((resolve,reject)=>{if(!navigator.geolocation)return reject(new Error("no geolocation"));navigator.geolocation.getCurrentPosition(p=>resolve({lat:p.coords.latitude,lon:p.coords.longitude}),reject,{enableHighAccuracy:true,timeout:15000,maximumAge:300000})})}
+function dateForApi(d){return [d.getDate(),d.getMonth()+1,d.getFullYear()].map(n=>String(n).padStart(2,"0")).join("-")}
+async function fetchPrayerTimes(lat,lon){$("prayerStatus").textContent=t("loading");try{const r=await fetch(`https://api.aladhan.com/v1/timings/${dateForApi(new Date())}?latitude=${lat}&longitude=${lon}&method=3`);if(!r.ok)throw Error("API");const j=await r.json();if(j.code!==200)throw Error("Data");prayerTimes=j.data.timings;document.querySelectorAll("[data-prayer]").forEach(card=>{const key=card.dataset.prayer;card.querySelector(".time").textContent=(prayerTimes[key]||"--:--").split(" ")[0]});$("prayerStatus").textContent=j.data.meta.timezone||"";updateNextPrayer()}catch(e){$("prayerStatus").textContent=t("prayerError")}}
+$("getPrayers").addEventListener("click",async()=>{try{const p=await getLocation();$("locationText").textContent=`${p.lat.toFixed(3)}, ${p.lon.toFixed(3)}`;await fetchPrayerTimes(p.lat,p.lon)}catch{$("prayerStatus").textContent=t("locationError")}});
+function updateNextPrayer(){if(!prayerTimes)return;const names=["Fajr","Dhuhr","Asr","Maghrib","Isha"];const now=new Date();let next=null,nextDate=null;for(const name of names){const raw=(prayerTimes[name]||"").split(" ")[0];const [h,m]=raw.split(":").map(Number);if(!Number.isFinite(h)||!Number.isFinite(m))continue;const d=new Date();d.setHours(h,m,0,0);if(d>now){next=name;nextDate=d;break}}if(!next){$("nextPrayer").textContent=t("noPrayer");document.querySelectorAll("[data-prayer]").forEach(c=>c.classList.remove("active"));return}document.querySelectorAll("[data-prayer]").forEach(c=>c.classList.toggle("active",c.dataset.prayer===next));const diff=Math.max(0,nextDate-now);const hh=Math.floor(diff/3600000),mm=Math.floor(diff%3600000/60000),ss=Math.floor(diff%60000/1000);$("nextPrayer").textContent=`${t("nextPrayer")}: ${t(next.toLowerCase())} · ${t("in")} ${hh}h ${mm}m ${ss}s`}
+setInterval(updateNextPrayer,1000);
+async function loadSurahList(){try{const r=await fetch("https://api.alquran.cloud/v1/surah");if(!r.ok)throw Error();const j=await r.json();if(j.code!==200)throw Error();$("surahSelect").replaceChildren();j.data.forEach(s=>{const o=document.createElement("option");o.value=s.number;o.textContent=`${s.number}. ${s.name} · ${s.englishName}`;$("surahSelect").append(o)});$("surahSelect").value="1"}catch{$("surahMessage").textContent=t("apiError")}}
+async function loadSurah(id){$("surahMessage").textContent=t("loading");$("surahText").textContent="";audio.pause();audio.removeAttribute("src");surahAyahs=[];currentAyah=0;updateAudioUi();try{const edition=$("reciterSelect").value;const [textResponse,audioResponse]=await Promise.all([fetch(`https://api.alquran.cloud/v1/surah/${id}/quran-uthmani`),fetch(`https://api.alquran.cloud/v1/surah/${id}/${edition}`)]);if(!textResponse.ok||!audioResponse.ok)throw Error();const [textJson,audioJson]=await Promise.all([textResponse.json(),audioResponse.json()]);if(textJson.code!==200||audioJson.code!==200)throw Error();surahAyahs=textJson.data.ayahs.map((a,i)=>({text:a.text,audio:audioJson.data.ayahs[i]?.audio||null,number:a.numberInSurah}));$("surahName").textContent=`${textJson.data.name} · ${textJson.data.englishName}`;$("surahText").textContent=textJson.data.ayahs.map(a=>`${a.text} ۞`).join(" ");$("surahMessage").textContent="";$("ayahPosition").textContent=`${t("ayah")} 1 / ${surahAyahs.length}`;if(!surahAyahs[0]?.audio)$("audioStatus").textContent=t("audioError")}catch{$("surahMessage").textContent=t("apiError");$("audioStatus").textContent=t("audioError")}}
+$("surahSelect").addEventListener("change",e=>loadSurah(e.target.value));
+$("reciterSelect").addEventListener("change",()=>loadSurah($("surahSelect").value));
+function updatePlayLabel(){$("playBtn").innerHTML=`<i class="fa-solid fa-${audio.paused?"play":"pause"}"></i><span>${audio.paused?t("play"):t("pause")}</span>`}
+function updateAudioUi(){const a=surahAyahs[currentAyah];$("ayahPosition").textContent=surahAyahs.length?`${t("ayah")} ${currentAyah+1} / ${surahAyahs.length}`:"0 / 0";$("audioProgress").value=0;$("currentTime").textContent="0:00";$("duration").textContent="0:00";$("prevBtn").disabled=currentAyah<=0;$("nextBtn").disabled=!surahAyahs.length||currentAyah>=surahAyahs.length-1}
+function fmtTime(s){if(!Number.isFinite(s))return"0:00";return`${Math.floor(s/60)}:${String(Math.floor(s%60)).padStart(2,"0")}`}
+async function playAyah(index){if(!surahAyahs.length)return;currentAyah=Math.max(0,Math.min(index,surahAyahs.length-1));const item=surahAyahs[currentAyah];if(!item.audio){$("audioStatus").textContent=t("audioError");return}audio.src=item.audio;audio.playbackRate=Number($("speedSelect").value);updateAudioUi();$("audioStatus").textContent=`${t("ayah")} ${currentAyah+1}`;try{await audio.play()}catch{$("audioStatus").textContent=t("audioError")}updatePlayLabel()}
+$("playBtn").addEventListener("click",()=>{if(audio.paused){if(!audio.src)playAyah(currentAyah);else audio.play().then(updatePlayLabel).catch(()=>{$("audioStatus").textContent=t("audioError")})}else audio.pause();updatePlayLabel()});
+$("prevBtn").addEventListener("click",()=>playAyah(currentAyah-1));$("nextBtn").addEventListener("click",()=>playAyah(currentAyah+1));
+audio.addEventListener("ended",()=>{if(currentAyah<surahAyahs.length-1)playAyah(currentAyah+1);else updatePlayLabel()});
+audio.addEventListener("timeupdate",()=>{$("currentTime").textContent=fmtTime(audio.currentTime);$("duration").textContent=fmtTime(audio.duration);if(Number.isFinite(audio.duration)&&audio.duration>0)$("audioProgress").value=audio.currentTime/audio.duration*100});
+$("audioProgress").addEventListener("input",e=>{if(Number.isFinite(audio.duration))audio.currentTime=Number(e.target.value)/100*audio.duration});
+$("speedSelect").addEventListener("change",e=>audio.playbackRate=Number(e.target.value));audio.addEventListener("play",updatePlayLabel);audio.addEventListener("pause",updatePlayLabel);
+let count=Number(localStorage.getItem("abdulfattah-tasbeeh-count")||0);$("count").textContent=count;
+$("countBtn").addEventListener("click",()=>{count++;$("count").textContent=count;localStorage.setItem("abdulfattah-tasbeeh-count",String(count))});
+$("resetBtn").addEventListener("click",()=>{count=0;$("count").textContent=count;localStorage.setItem("abdulfattah-tasbeeh-count","0")});
+$("dhikrSelect").addEventListener("change",e=>{$("dhikrDisplay").textContent=e.target.value;count=0;$("count").textContent=count;localStorage.setItem("abdulfattah-tasbeeh-count","0")});
+let adhkarMode="morning";
+function renderAdhkar(){const items=adhkarMode==="morning"?morningAdhkar:eveningAdhkar;const box=$("adhkarList");box.replaceChildren();items.forEach(text=>{const card=document.createElement("article");card.className="adhkar-item";const p=document.createElement("p");p.className="arabic";p.textContent=text;const b=document.createElement("button");b.className="copy-btn";b.textContent=t("copy");b.addEventListener("click",async()=>{try{await navigator.clipboard.writeText(text);b.textContent=t("copied")}catch{toast(t("copyFail"))}});card.append(p,b);box.append(card)})}
+$("morningBtn").addEventListener("click",()=>{adhkarMode="morning";renderAdhkar()});$("eveningBtn").addEventListener("click",()=>{adhkarMode="evening";renderAdhkar()});
+function qiblaBearing(lat,lon){const kLat=21.4225*Math.PI/180,kLon=39.8262*Math.PI/180,uLat=lat*Math.PI/180,uLon=lon*Math.PI/180;const y=Math.sin(kLon-uLon),x=Math.cos(uLat)*Math.tan(kLat)-Math.sin(uLat)*Math.cos(kLon-uLon);return(Math.atan2(y,x)*180/Math.PI+360)%360}
+$("qiblaBtn").addEventListener("click",async()=>{try{const p=await getLocation();const bearing=qiblaBearing(p.lat,p.lon);$("needle").style.transform=`rotate(${bearing}deg)`;$("qiblaResult").textContent=t("qiblaDirection")+bearing.toFixed(1)+"° "+t("degrees")}catch{$("qiblaResult").textContent=t("locationError")}});
+setLanguage("ar");renderAdhkar();updateCalendar();loadSurahList().then(()=>loadSurah(1));
+</script>
+</body>
+</html>
