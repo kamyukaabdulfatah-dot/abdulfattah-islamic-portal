@@ -1,33 +1,33 @@
-# عبد الفتاح | Islamic Portal
+# Abdulfattah Islamic Portal v3
 
-A responsive, static Islamic portal built with HTML, CSS and JavaScript.
+Upload all files in this folder to the root of your GitHub Pages repository.
 
 ## Features
-- Arabic, English, French and Swahili interface
-- Live clock and Gregorian/Hijri date display
-- Location-based prayer times using the AlAdhan API
-- Next-prayer countdown and upcoming-prayer highlight
-- All 114 Quran surahs, with Arabic text
-- Audio recitation with selectable reciters, play/pause, previous/next ayah, progress and playback speed
-- Morning/evening adhkar with copy controls
-- Tasbeeh counter saved in the browser on the current device
-- Qibla bearing calculation based on device location
+- Arabic, English, French and Luganda interface
+- All 114 Quran surahs in Arabic
+- Reciter selector and ayah-by-ayah audio with optional automatic next ayah
+- Location-based prayer times, selectable calculation method and next-prayer countdown
+- Browser prayer notifications while the page remains open
+- Qibla bearing calculation and optional device compass
+- Tasbeeh saved with localStorage
+- Ramadan panel and curated daily hadith cards with references
+- Dark/light theme, adjustable website/Arabic/brand fonts
+- Browser speech commands with an animated glow only while microphone recognition is active
+- PWA manifest, icon and service worker
 
-## Run locally
-Open `index.html` in a browser. For geolocation, use HTTPS or localhost. Prayer times and location features need permission and an internet connection.
+## GitHub Pages deployment
+1. Extract this ZIP.
+2. In your repository choose **Add file → Upload files**.
+3. Upload `index.html`, `manifest.json`, `sw.js`, `icon.svg`, and `README.md` into the repository root.
+4. Commit to `main`.
+5. Open **Settings → Pages**, choose **Deploy from a branch**, `main`, `/(root)`, then Save.
 
-## Publish with GitHub Pages
-1. Create a new repository on GitHub.
-2. Upload `index.html` and this `README.md` to the repository root.
-3. Open **Settings → Pages**.
-4. Under **Build and deployment**, choose **Deploy from a branch**.
-5. Select **main** and **/(root)**, then save.
-6. Wait for GitHub to publish the site. Your public URL will appear in the Pages section.
-
-## APIs and notes
-- Quran text and recitation: [AlQuran Cloud API](https://alquran.cloud/api)
-- Prayer times: [AlAdhan API](https://aladhan.com/prayer-times-api)
-- Prayer calculation method is currently set to method `3` (Muslim World League). Adjust it in `fetchPrayerTimes()` if your local authority uses another method.
-- The Qibla display shows the bearing clockwise from true north. It is not a live magnetic compass sensor.
-- External fonts, icons and APIs require internet access.
-- This is a client-side static site. No personal location is sent to a custom server by this project; coordinates are used in the prayer-times API request.
+## Important limitations
+- Use the HTTPS GitHub Pages URL for geolocation, notifications, microphone and installation.
+- Notifications work only while this page is open. Background push notifications after the browser is closed need a server/push service and are not included.
+- The voice glow reflects real browser speech-recognition listening; it is not connected to Gemini or a Gemini API. Browser support varies.
+- Quran text/audio uses AlQuran Cloud; prayer calculations use AlAdhan. Internet is needed for fresh data and audio.
+- Device compass support varies by phone/browser and may need calibration.
+- The PWA caches the app shell only. Quran, audio and prayer API data need internet.
+- Prayer method defaults to Muslim World League. Choose the method used by your local mosque or authority.
+- Daily hadith entries include references; verify against trusted editions before quoting or republishing.
